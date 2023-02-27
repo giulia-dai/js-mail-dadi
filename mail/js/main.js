@@ -12,6 +12,7 @@ const mailsAllowed = ['pippo.pluto@yahoo.it', 'topolino.pluto@gmail.com', 'paper
 console.log(mailsAllowed);
 
 for (let i = 0; i < mailsAllowed.length; i++){
+    
     if (mailsAllowed[i] !== yourMail){
 
         document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail} non risulta nel nostro server. Accesso non consentito.`;
@@ -21,6 +22,8 @@ for (let i = 0; i < mailsAllowed.length; i++){
 
         document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail}  risulta nel nostro server. Accesso  consentito.`;
         console.log(mailsAllowed[i]);
+    }else{
+        
     }
-    
+
 }
