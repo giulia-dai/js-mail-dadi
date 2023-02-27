@@ -11,19 +11,26 @@ console.log(yourMail);
 const mailsAllowed = ['pippo.pluto@yahoo.it', 'topolino.pluto@gmail.com', 'paperino007@hotmail.it'];
 console.log(mailsAllowed);
 
+let mailTrovata = false;
+
 for (let i = 0; i < mailsAllowed.length; i++){
     
-    if (mailsAllowed[i] !== yourMail){
+    if (mailsAllowed[i] === yourMail){
 
-        document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail} non risulta nel nostro server. Accesso non consentito.`;
-        console.log(mailsAllowed[i]);
+        mailTrovata = true;
 
-    }else if (mailsAllowed[i] == yourMail){
+    }else {
 
-        document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail}  risulta nel nostro server. Accesso  consentito.`;
-        console.log(mailsAllowed[i]);
-    }else{
-        
     }
-
 }
+
+if (mailTrovata == true){
+
+    document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail} risulta nel nostro server. Accesso consentito.`;
+    console.log('trovata');
+}else{
+
+    document.getElementById('login').innerHTML =`la tua e-mail: ${yourMail} non risulta nel nostro server. Accesso negato.`;
+    console.log('non trovata');
+}
+
